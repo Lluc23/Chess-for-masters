@@ -1,0 +1,150 @@
+
+.container {
+  padding-top:50px;
+  padding-bottom: 100px;
+
+}
+
+.row {
+  margin: 0px;
+
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-family: "Courier New";
+}
+
+body {
+  background-image: url("./img/woodbackground.jpg");
+  background-image: cover;
+}
+
+.blacksquare {
+	background-color:#8B4513;
+}
+
+.whitesquare {
+	background-color:#F5F5DC;
+}
+
+.blacksquare, .whitesquare {
+	height:55px;
+}
+
+.empty {
+	height:15px;
+  padding-top:20px;
+  padding-bottom: 20px;
+}
+
+.empty2 {
+	height:15px;
+  padding-top:20px;
+  padding-bottom: 20px;
+}
+
+@media screen and (min-width: 300px) {
+  .blacksquare, .whitesquare, .empty, .empty2 {
+  	height:30px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .blacksquare, .whitesquare, .empty, .empty2 {
+  	height:45px;
+  }
+}
+
+@media screen and (min-width: 728px) {
+  .blacksquare, .whitesquare, .empty, .empty2 {
+  	height:60px;
+  }
+}
+
+@media screen and (min-width: 940px) {
+  .blacksquare, .whitesquare, .empty, .empty2 {
+  	height:75px;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .blacksquare, .whitesquare, .empty, .empty2 {
+  	height:80px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .blacksquare, .whitesquare, .empty, .empty2 {
+  	height:90px;
+  }
+}
+
+.selected {
+  background-color: #B0C4DE;
+}
+
+.tower.white {
+  background-image: url("./img/WhiteTower.png");
+  background-size: contain ;
+}
+
+.bishop.white {
+  background-image: url("./img/WhiteBishop.png");
+  background-size: contain ;
+}
+
+.horse.white {
+  background-image: url("./img/WhiteHorse.png");
+  background-size: contain ;
+}
+
+.queen.white {
+  background-image: url("./img/WhiteQueen.png");
+  background-size: contain ;
+}
+
+.king.white {
+  background-image: url("./img/WhiteKing.png");
+  background-size: contain ;
+}
+
+.pawn.white {
+  background-image: url("./img/WhitePawn.png");
+  background-size: contain ;
+}
+
+.tower.black {
+  background-image: url("./img/BlackTower.png");
+  background-size: contain ;
+}
+
+.bishop.black {
+  background-image: url("./img/BlackBishop.png");
+  background-size: contain ;
+}
+
+.horse.black {
+  background-image: url("./img/BlackHorse.png");
+  background-size: contain ;
+}
+
+.queen.black {
+  background-image: url("./img/BlackQueen.png");
+  background-size: contain ;
+}
+
+.king.black {
+  background-image: url("./img/BlackKing.png");
+  background-size: contain ;
+}
+
+.pawn.black {
+  background-image: url("./img/BlackPawn.png");
+  background-size: contain ;
+}
+
+.pieceselected {
+  background-color: grey;
+}
