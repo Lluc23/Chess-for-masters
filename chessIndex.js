@@ -1,5 +1,6 @@
 $(document).ready(function() {
-
+var blackCounter = 1;
+var whiteCounter = 1;
 var classArray;
 var pieceID;
   //$("#A1").addClass("red");
@@ -17,6 +18,12 @@ $("body").on('click', '.container2',function(e){
 
     if(classArray && classArray.length > 3) {
       var remove_classes = $(e.target).attr("class").split(" ");
+        if(remove_classes[3] === "black" && classArray[3] === "white"){
+          blackCounter += 1;
+          $(".empty2:nth-child(" + blackCounter + ")").addClass(remove_classes[2] + " " + remove_classes[3]);}
+        if (remove_classes[3] === "white" && classArray[3] === "black"){
+          whiteCounter += 1;
+          $(".empty:nth-child(" + whiteCounter + ")").addClass(remove_classes[2] + " " + remove_classes[3]);}
         if (remove_classes[3]== classArray[3]){
             classArray = undefined;}
         else if(remove_classes[3]!== classArray[3]){
@@ -25,26 +32,22 @@ $("body").on('click', '.container2',function(e){
           $("#" + pieceID).removeClass(classArray[2] + " " + classArray[3]);
           audioElement.play();
           classArray = undefined;
-          console.log(remove_classes);}
-        //  if(remove_classes[3] === "black"){
-        //   $(".empty2").addClass(remove_classes[2] + " " + remove_classes[3]);}
-        //  if (remove_classes[3] ==="white"){
-        //   $(".empty").addClass(remove_classes[2] + " " + remove_classes[3]);
-        // }
+          }
       }
 
     else {
       $(e.target).addClass("selected");
       classArray = $(e.target).attr("class").split(" ");
       pieceID = $(e.target).attr("id");
-    }}
+    }
+    $(".whitesquare, .blacksquare").removeClass("selected");
+    $(e.target).toggleClass("selected");
+  }
 
   else {
     $(".whitesquare, .blacksquare").removeClass("selected");
     classArray = undefined;
   }
-  $(".whitesquare, .blacksquare").removeClass("selected");
-  $(e.target).toggleClass("selected");
 });
 
     var chessgame = new Game();
