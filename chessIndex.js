@@ -1,6 +1,6 @@
 $(document).ready(function() {
-var blackCounter = 1;
-var whiteCounter = 1;
+var blackCounter = 2;
+var whiteCounter = 2;
 var classArray;
 var pieceID;
   //$("#A1").addClass("red");
@@ -19,11 +19,21 @@ $("body").on('click', '.container2',function(e){
     if(classArray && classArray.length > 3) {
       var remove_classes = $(e.target).attr("class").split(" ");
         if(remove_classes[3] === "black" && classArray[3] === "white"){
+          if(blackCounter <= 9){
+            $(".empty2:nth-child(" + blackCounter + ")").addClass(remove_classes[2] + " " + remove_classes[3]);
+          } else if(blackCounter > 9){
+            $(".empty3:nth-child(" + (blackCounter-8) + ")").addClass(remove_classes[2] + " " + remove_classes[3]);
+          }
           blackCounter += 1;
-          $(".empty2:nth-child(" + blackCounter + ")").addClass(remove_classes[2] + " " + remove_classes[3]);}
+        }
         if (remove_classes[3] === "white" && classArray[3] === "black"){
+          if(whiteCounter <= 9){
+            $(".empty:nth-child(" + whiteCounter + ")").addClass(remove_classes[2] + " " + remove_classes[3]);
+          } else if(whiteCounter > 9){
+            $(".empty0:nth-child(" + (whiteCounter - 8) + ")").addClass(remove_classes[2] + " " + remove_classes[3]);
+          }
           whiteCounter += 1;
-          $(".empty:nth-child(" + whiteCounter + ")").addClass(remove_classes[2] + " " + remove_classes[3]);}
+        }
         if (remove_classes[3]== classArray[3]){
             classArray = undefined;}
         else if(remove_classes[3]!== classArray[3]){
